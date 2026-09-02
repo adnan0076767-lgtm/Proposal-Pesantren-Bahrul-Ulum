@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Proposal Pembangunan | Pondok Pesantren Bahrul Ulum</title>
+
+  <meta name="description"
+    content="Proposal simulasi pembangunan Pondok Pesantren Bahrul Ulum, Cibodas, Bandung Barat.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7f6;
+      color: #1f2933;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================== */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 3px 15px rgba(0,0,0,.08);
+    }
+
+    .nav-container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-weight: 800;
+      color: #126b4f;
+      font-size: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #374151;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #126b4f;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 20px;
+      background:
+        linear-gradient(135deg, #0c5b43, #16825f);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,.07);
+    }
+
+    .hero::before {
+      width: 350px;
+      height: 350px;
+      top: -120px;
+      left: -100px;
+    }
+
+    .hero::after {
+      width: 450px;
+      height: 450px;
+      right: -180px;
+      bottom: -180px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 15px;
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 50px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      background: rgba(255,255,255,.08);
+    }
+
+    .hero h1 {
+      font-size: clamp(35px, 6vw, 65px);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .hero h2 {
+      font-size: clamp(18px, 3vw, 27px);
+      font-weight: 400;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: auto;
+      opacity: .92;
+    }
+
+    .hero-buttons {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #126b4f;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,.6);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* =========================
+       GENERAL
+    ========================== */
+
+    section {
+      padding: 75px 20px;
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      color: #126b4f;
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #6b7280;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.06);
+      margin-bottom: 25px;
+    }
+
+    /* =========================
+       TARGET
+    ========================== */
+
+    .target-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .target-card {
+      background: white;
+      padding: 28px;
+      text-align: center;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.06);
+    }
+
+    .target-card strong {
+      display: block;
+      color: #126b4f;
+      font-size: 25px;
+      margin-top: 5px;
+    }
+
+    /* =========================
+       PROGRESS
+    ========================== */
+
+    .progress-box {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.06);
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .progress-bar {
+      height: 18px;
+      background: #e5e7eb;
+      border-radius: 30px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      width: 0%;
+      height: 100%;
+      background: #15936c;
+      border-radius: 30px;
+    }
+
+    /* =========================
+       TUJUAN
+    ========================== */
+
+    .list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .list div {
+      padding: 14px 17px;
+      border-radius: 10px;
+      background: #f0f7f4;
+    }
+
+    /* =========================
+       RAB
+    ========================== */
+
+    .table-wrapper {
+      overflow-x: auto;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.06);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 700px;
+    }
+
+    th,
+    td {
+      padding: 14px;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: left;
+    }
+
+    th {
+      background: #126b4f;
+      color: white;
+    }
+
+    td:last-child,
+    th:last-child {
+      text-align: right;
+    }
+
+    .total {
+      font-weight: 800;
+      background: #eef8f4;
+      color: #126b4f;
+    }
+
+    /* =========================
+       DOCUMENTASI
+    ========================== */
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 20px;
+    }
+
+    .photo-placeholder {
+      height: 220px;
+      border: 2px dashed #9ca3af;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      color: #6b7280;
+      background: #fff;
+    }
+
+    /* =========================
+       DONASI
+    ========================== */
+
+    .donation {
+      background: #0c5b43;
+      color: white;
+      border-radius: 22px;
+      padding: 45px 30px;
+      text-align: center;
+    }
+
+    .donation h2 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .rekening {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 15px;
+      padding: 20px;
+      max-width: 600px;
+      margin: 25px auto;
+    }
+
+    .rekening strong {
+      font-size: 24px;
+      display: block;
+      margin: 5px 0;
+    }
+
+    /* =========================
+       SIGNATURE
+    ========================== */
+
+    .signature {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 30px;
+      text-align: center;
+      margin-top: 35px;
+    }
+
+    .sign-space {
+      height: 100px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #082f24;
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    footer p {
+      opacity: .8;
+      font-size: 14px;
+    }
+
+    /* =========================
+       FLOATING BUTTON
+    ========================== */
+
+    .wa-button {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 1000;
+      background: #15936c;
+      color: white;
+      text-decoration: none;
+      padding: 14px 18px;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 8px 25px rgba(0,0,0,.2);
+    }
+
+    /* =========================
+       PRINT
+    ========================== */
+
+    @media print {
+      nav,
+      .wa-button,
+      .hero-buttons {
+        display: none;
+      }
+
+      section {
+        padding: 30px 0;
+      }
+
+      body {
+        background: white;
+      }
+
+      .card,
+      .target-card,
+      .progress-box,
+      .table-wrapper {
+        box-shadow: none;
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media(max-width:700px) {
+
+      .nav-container {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      .target-grid,
+      .gallery,
+      .signature {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 85vh;
+      }
+
+      section {
+        padding: 55px 15px;
+      }
+
+      .card,
+      .progress-box {
+        padding: 22px;
+      }
+
+      .donation {
+        padding: 35px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================== -->
+
+<nav>
+  <div class="nav-container">
+
+    <div class="logo">
+      BAHRUL ULUM
+    </div>
+
+    <div class="nav-links">
+      <a href="#beranda">Beranda</a>
+      <a href="#proposal">Proposal</a>
+      <a href="#rab">RAB</a>
+      <a href="#dokumentasi">Dokumentasi</a>
+      <a href="#donasi">Donasi</a>
+    </div>
+
+  </div>
+</nav>
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section class="hero" id="beranda">
+
+  <div class="hero-content">
+
+    <span class="badge">
+      PROPOSAL PEMBANGUNAN • VERSI SIMULASI
+    </span>
+
+    <h1>
+      Pondok Pesantren<br>
+      Bahrul Ulum
+    </h1>
+
+    <h2>
+      Mewujudkan Pesantren Modern
+    </h2>
+
+    <p>
+      Bersama membangun sarana pendidikan,
+      pembinaan, dan lingkungan pesantren yang
+      lebih nyaman untuk generasi masa depan.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="#proposal" class="btn btn-primary">
+        📖 Lihat Proposal
+      </a>
+
+      <a href="#donasi" class="btn btn-secondary">
+        🤲 Dukung Pembangunan
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     TARGET
+========================== -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Target Pembangunan</h2>
+      <p>Gambaran singkat rencana pembangunan</p>
+    </div>
+
+    <div class="target-grid">
+
+      <div class="target-card">
+        📍
+        <strong>Cibodas</strong>
+        Bandung Barat
+      </div>
+
+      <div class="target-card">
+        🕌
+        <strong>Pesantren Modern</strong>
+        Program Pembangunan
+      </div>
+
+      <div class="target-card">
+        💰
+        <strong>Rp500 Juta</strong>
+        Target Dana
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PROGRESS
+========================== -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Progress Penggalangan Dana</h2>
+      <p>Contoh tampilan progress untuk versi simulasi</p>
+    </div>
+
+    <div class="progress-box">
+
+      <div class="progress-header">
+        <span>Progress</span>
+        <span>0%</span>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+
+      <p style="margin-top:15px;text-align:center;">
+        Rp0 dari Rp500.000.000
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PROPOSAL
+========================== -->
+
+<section id="proposal">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Isi Proposal</h2>
+      <p>Dokumen permohonan bantuan pembangunan</p>
+    </div>
+
+
+    <div class="card">
+
+      <h3>HALAMAN PENGESAHAN</h3>
+
+      <br>
+
+      <p>
+        Proposal Permohonan Bantuan Dana Pembangunan
+        Pondok Pesantren Bahrul Ulum ini disusun sebagai
+        dokumen simulasi untuk rencana pembangunan dan
+        pengembangan pesantren modern di Cibodas,
+        Bandung Barat.
+      </p>
+
+      <br>
+
+      <p>
+        Total kebutuhan dana yang diajukan dalam simulasi
+        ini adalah <b>Rp500.000.000</b>
+        (Lima Ratus Juta Rupiah).
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>KATA PENGANTAR</h3>
+
+      <br>
+
+      <p>
+        Puji syukur ke hadirat Allah SWT atas segala
+        rahmat dan karunia-Nya. Proposal ini disusun
+        sebagai gambaran rencana pembangunan Pondok
+        Pesantren Bahrul Ulum di Cibodas, Bandung Barat,
+        menuju pesantren yang lebih representatif,
+        nyaman, dan mendukung kegiatan pendidikan serta
+        pembinaan para santri.
+      </p>
+
+      <br>
+
+      <p>
+        Pembangunan pesantren membutuhkan dukungan
+        berbagai pihak. Melalui proposal ini kami
+        menyampaikan rencana kebutuhan pembangunan
+        sekaligus membuka ruang partisipasi dari para
+        donatur, masyarakat, lembaga, dan pihak-pihak
+        yang memiliki kepedulian terhadap pendidikan
+        keagamaan.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>BAB I — PENDAHULUAN</h3>
+
+      <br>
+
+      <p>
+        Pendidikan merupakan salah satu fondasi penting
+        dalam membentuk generasi yang berilmu, berkarakter,
+        dan memiliki kepedulian terhadap masyarakat.
+        Pondok pesantren memiliki peran strategis dalam
+        memberikan pendidikan keagamaan sekaligus
+        pembinaan akhlak dan kemandirian santri.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>BAB II — LATAR BELAKANG</h3>
+
+      <br>
+
+      <p>
+        Seiring berkembangnya kebutuhan pendidikan dan
+        pembinaan santri, pesantren membutuhkan
+        pengembangan fasilitas yang lebih layak dan
+        terencana.
+      </p>
+
+      <br>
+
+      <p>
+        Pembangunan pesantren modern diarahkan untuk
+        menciptakan lingkungan belajar yang nyaman,
+        aman, bersih, dan mendukung kegiatan ibadah
+        serta pendidikan.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>BAB III — MAKSUD DAN TUJUAN</h3>
+
+      <br>
+
+      <div class="list">
+
+        <div>
+          ✓ Mewujudkan sarana pendidikan pesantren yang lebih layak.
+        </div>
+
+        <div>
+          ✓ Meningkatkan kenyamanan kegiatan belajar dan ibadah.
+        </div>
+
+        <div>
+          ✓ Menyediakan fasilitas pendukung pendidikan.
+        </div>
+
+        <div>
+          ✓ Membangun lingkungan pesantren yang tertata.
+        </div>
+
+        <div>
+          ✓ Menggalang partisipasi masyarakat dan donatur.
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>BAB IV — PROFIL SINGKAT</h3>
+
+      <br>
+
+      <p>
+        <b>Nama Lembaga:</b>
+        Pondok Pesantren Bahrul Ulum
+      </p>
+
+      <p>
+        <b>Lokasi:</b>
+        Cibodas, Bandung Barat
+      </p>
+
+      <p>
+        <b>Program:</b>
+        Pembangunan Pesantren Modern
+      </p>
+
+      <p>
+        <b>Status Dokumen:</b>
+        Simulasi
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>BAB V — RENCANA PEMBANGUNAN</h3>
+
+      <br>
+
+      <p>
+        Rencana pembangunan dalam simulasi ini mencakup
+        pekerjaan persiapan, struktur, dinding, lantai,
+        atap, plafon, finishing, instalasi listrik,
+        sanitasi, sarana pendidikan, serta penataan
+        lingkungan pesantren.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>BAB VI — LOKASI PEMBANGUNAN</h3>
+
+      <br>
+
+      <p>
+        Lokasi pembangunan direncanakan berada di wilayah
+        Cibodas, Bandung Barat. Detail alamat, luas lahan,
+        status kepemilikan, dan informasi lokasi dapat
+        dilengkapi pada tahap finalisasi proposal.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     RAB
+========================== -->
+
+<section id="rab">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>Rencana Anggaran Biaya</h2>
+
+      <p>
+        RAB simulasi pembangunan
+      </p>
+
+    </div>
+
+
+    <div class="table-wrapper">
+
+      <table>
+
+        <thead>
+
+          <tr>
+            <th>No.</th>
+            <th>Uraian Pekerjaan</th>
+            <th>Anggaran</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>1</td>
+            <td>Persiapan dan perencanaan pembangunan</td>
+            <td>Rp25.000.000</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>Pekerjaan pondasi dan struktur bangunan</td>
+            <td>Rp100.000.000</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>Pembangunan dinding dan lantai</td>
+            <td>Rp75.000.000</td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>Pekerjaan atap dan plafon</td>
+            <td>Rp65.000.000</td>
+          </tr>
+
+          <tr>
+            <td>5</td>
+            <td>Pintu, jendela, dan finishing</td>
+            <td>Rp45.000.000</td>
+          </tr>
+
+          <tr>
+            <td>6</td>
+            <td>Instalasi listrik dan penerangan</td>
+            <td>Rp25.000.000</td>
+          </tr>
+
+          <tr>
+            <td>7</td>
+            <td>Sanitasi, kamar mandi, dan toilet</td>
+            <td>Rp35.000.000</td>
+          </tr>
+
+          <tr>
+            <td>8</td>
+            <td>Pengadaan sarana pendidikan</td>
+            <td>Rp50.000.000</td>
+          </tr>
+
+          <tr>
+            <td>9</td>
+            <td>Penataan lingkungan pesantren</td>
+            <td>Rp30.000.000</td>
+          </tr>
+
+          <tr>
+            <td>10</td>
+            <td>Biaya pendukung dan kebutuhan tidak terduga</td>
+            <td>Rp50.000.000</td>
+          </tr>
+
+          <tr class="total">
+            <td></td>
+            <td>TOTAL</td>
+            <td>Rp500.000.000</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     DOKUMENTASI
+========================== -->
+
+<section id="dokumentasi">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>Dokumentasi</h2>
+
+      <p>
+        Foto asli dapat dimasukkan pada versi berikutnya
+      </p>
+
+    </div>
+
+
+    <div class="gallery">
+
+      <div class="photo-placeholder">
+        📷<br>
+        Foto 1<br>
+        Kondisi lokasi pesantren
+      </div>
+
+      <div class="photo-placeholder">
+        📷<br>
+        Foto 2<br>
+        Kondisi bangunan saat ini
+      </div>
+
+      <div class="photo-placeholder">
+        📷<br>
+        Foto 3<br>
+        Lokasi rencana pembangunan
+      </div>
+
+      <div class="photo-placeholder">
+        📷<br>
+        Foto 4<br>
+        Kegiatan santri
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     DONASI
+========================== -->
+
+<section id="donasi">
+
+  <div class="container">
+
+    <div class="donation">
+
+      <h2>🤲 Dukung Pembangunan</h2>
+
+      <p>
+        Setiap dukungan merupakan bagian dari ikhtiar
+        bersama dalam mewujudkan fasilitas pendidikan
+        yang lebih baik.
+      </p>
+
+
+      <div class="rekening">
+
+        <p>Bank Mandiri</p>
+
+        <strong>
+          1300029782086
+        </strong>
+
+        <p>
+          AHMAD ADNAN ALFARIZI
+        </p>
+
+      </div>
+
+
+      <p style="font-size:13px;opacity:.8;">
+        DATA REKENING DI ATAS HANYA UNTUK SIMULASI.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PENUTUP
+========================== -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>Penutup</h2>
+
+    </div>
+
+
+    <div class="card">
+
+      <p>
+        Demikian proposal permohonan bantuan dana
+        pembangunan Pondok Pesantren Bahrul Ulum ini
+        dibuat sebagai dokumen simulasi.
+      </p>
+
+      <br>
+
+      <p>
+        Besar harapan kami agar rencana pembangunan
+        dapat memperoleh dukungan dan partisipasi dari
+        berbagai pihak sehingga dapat terlaksana dengan
+        baik.
+      </p>
+
+
+      <div class="signature">
+
+        <div>
+
+          <b>Mengetahui,</b>
+
+          <div class="sign-space"></div>
+
+          <b>
+            (________________________)
+          </b>
+
+          <p>
+            Pimpinan/Pengasuh
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <b>Disusun oleh,</b>
+
+          <div class="sign-space"></div>
+
+          <b>
+            (________________________)
+          </b>
+
+          <p>
+            Ketua Panitia
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div style="text-align:center;margin-top:40px;">
+
+        <b>Sekretaris</b>
+
+        <div class="sign-space"></div>
+
+        <b>
+          (________________________)
+        </b>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+  <h3>
+    Pondok Pesantren Bahrul Ulum
+  </h3>
+
+  <p>
+    Cibodas, Bandung Barat
+  </p>
+
+  <p style="margin-top:10px;">
+    © 2026 — Proposal Simulasi Pembangunan
+  </p>
+
+</footer>
+
+
+<!-- =========================
+     WHATSAPP
+========================== -->
+
+<a
+  class="wa-button"
+  href="https://wa.me/6280000000000"
+  target="_blank"
+>
+  💬 WhatsApp
+</a>
+
+
+<script>
+
+  /*
+    ==========================================
+    PROGRESS SIMULASI
+    ==========================================
+  */
+
+  const target = 500000000;
+  const terkumpul = 0;
+
+  const persen =
+    Math.min(
+      (terkumpul / target) * 100,
+      100
+    );
+
+  document.querySelector(".progress-fill").style.width =
+    persen + "%";
+
+
+  /*
+    ==========================================
+    PRINT / SIMPAN PDF
+    ==========================================
+  */
+
+  function cetakProposal() {
+    window.print();
+  }
+
+</script>
+
+</body>
+</html>
